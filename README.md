@@ -298,34 +298,53 @@
 
 ## 🚀 安装方法
 
-### 方式一：安装单个团队（推荐新手）
+### ⭐ 推荐方式：使用合集仓库（一键安装所有团队）
 
-如果你只需要某个特定团队：
+本合集仓库已包含所有9个团队的配置文件（43个 agents + 9个 coordinator skills），无需逐个克隆团队仓库。
 
 ```bash
-# 1. 克隆团队仓库
-git clone https://github.com/LZMW/blackstone-team.git
+# 1. 克隆合集仓库
+git clone https://github.com/LZMW/expert-teams-collection.git
 
-# 2. 复制配置文件到 Claude Code 目录
-cp blackstone-team/agents/*.md ~/.claude/agents/
-cp -r blackstone-team/skills/* ~/.claude/skills/
+# 2. 运行安装脚本
+cd expert-teams-collection
+bash install-all.sh      # Linux/macOS
+# 或
+install-all.bat          # Windows
 
 # 3. 重启 Claude Code
 ```
 
-### 方式二：安装所有团队（推荐资深用户）
+**安装脚本会自动：**
+- ✅ 复制所有 43 个 agent 配置文件到 `~/.claude/agents/`
+- ✅ 复制所有 9 个 coordinator skills 到 `~/.claude/skills/`
+- ✅ 完成后显示安装统计信息
 
-如果你想要拥有完整的专家团队联盟：
+### 方式二：手动选择安装
+
+如果你只需要某个特定团队，可以从本仓库手动复制对应的文件：
 
 ```bash
-# 1. 克隆本仓库
-git clone https://github.com/LZMW/expert-teams-collection.git
+# 例如：只安装 Blackstone 团队
+cp expert-teams-collection/agents/blackstone-*.md ~/.claude/agents/
+cp -r expert-teams-collection/skills/blackstone-coordinator ~/.claude/skills/
 
-# 2. 批量安装脚本
-cd expert-teams-collection
-bash install-all.sh
+# 重启 Claude Code
+```
 
-# 3. 重启 Claude Code
+### 方式三：从原始团队仓库安装
+
+如果你想要从各个团队的原始仓库安装：
+
+```bash
+# 克隆单个团队仓库
+git clone https://github.com/LZMW/blackstone-team.git
+
+# 复制配置文件到 Claude Code 目录
+cp blackstone-team/agents/*.md ~/.claude/agents/
+cp -r blackstone-team/skills/* ~/.claude/skills/
+
+# 重启 Claude Code
 ```
 
 ---
